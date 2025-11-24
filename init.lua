@@ -1,7 +1,4 @@
--- Basic
-require("core.config")
-require("core.lazy")
-require("core.keymaps")
+require("core")
 
 -- Color scheme
 vim.cmd([[colorscheme kanagawa-dragon]]) -- kanagawa-wave, kanagawa-dragon, kanagawa-lotus
