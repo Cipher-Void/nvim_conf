@@ -13,6 +13,7 @@ return {
                 "tsx",
                 "css",
                 "html",
+                "markdown", "markdown_inline"
             },
             highlight = { enable = true },
             rainbow = { enable = true },
