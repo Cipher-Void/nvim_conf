@@ -18,6 +18,7 @@ vim.opt.splitright = true
 vim.g.mapleader = ',' -- Leader key
 vim.opt.termguicolors = true -- 24-bit colors
 vim.opt.conceallevel = 1
+vim.opt.clipboard = "unnamedplus"
 
 
 -- netrw файловый менеджер 
