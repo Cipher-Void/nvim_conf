@@ -38,17 +38,5 @@ return {
       t('def '), t("__init__"), t("(self, "), i(1), t({"):", "\t"}), t("self."), rep(1), t(" = "), rep(1)
   }),
 
-
-  -- log to webhook
-  s("wlog", {
-    t('webhook_url = "'), i(1, "/webhook-path"), t({'"', "message = str("}),
-    i(2, "logging_object"),
-    t({")",
-       "from tests.lib.log import log",
-       "import traceback",
-       "formatted_traceback = traceback.format_exc()",
-       'log(f"Traceback:\\n\\n{formatted_traceback}\\n\\nMessage:\\n\\n{message}", webhook_url)'
-    })
-  }),
 }
 
