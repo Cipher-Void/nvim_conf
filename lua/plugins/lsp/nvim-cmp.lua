@@ -50,16 +50,10 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
         },
-        -- event = { "BufReadPre", "BufNewFile" }, 
-        event = { "InsertEnter", "CmdlineEnter" }, 
+        event = { "BufReadPre", "BufNewFile", "InsertEnter" }, 
         opts = function()
             local cmp = require('cmp')
             return {
-                -- snippet = {
-                --     expand = function(args)
-                --         return require('luasnip').lsp_expand(args.body)
-                --     end 
-                -- },
                 completion = {
                     autocomplete =false, -- Отключить автоматическое появление, так как сильно грузит Vim
                 },
