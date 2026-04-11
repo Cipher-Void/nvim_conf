@@ -39,4 +39,6 @@ vim.lsp.enable({
     "lua_ls",
     "emmet_ls",
     "pyright",
+    -- "tsgo",  -- Более быстрый lsp для ts
+    "vtsls"
 })
