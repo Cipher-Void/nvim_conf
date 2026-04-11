@@ -34,10 +34,7 @@ alias n=nvim
 ### npm
 Для автоматического форматирования и autocmp HTML/CSS кода вам необходимо установить следующие LSP серверы с помощью npm:
 ```
-sudo npm install -g vscode-html-languageserver-bin
-```
-```
-sudo npm install -g vscode-css-languageserver-bin
+npm i -g vscode-langservers-extracted
 ```
 
 ## Сборка
