@@ -57,11 +57,6 @@ return {
         lazy = true,
     },  
         
-    {
-        'mattn/emmet-vim', 
-        ft = "html",
-    },
-
     {'numToStr/Comment.nvim',  -- Для удобного коментирования
         lazy = true,
         keys = {  -- Для ленивой загрузки
