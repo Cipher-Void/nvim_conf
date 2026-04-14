@@ -50,7 +50,7 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
         },
-        event = {"BufReadPre", "BufNewFile"}, 
+        event = "VeryLazy", 
         opts = function()
             local cmp = require('cmp')
             return {
