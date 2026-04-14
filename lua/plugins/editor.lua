@@ -3,12 +3,12 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         cmd = "Telescope",
-        lazy = true,
+        lazy = false,
+        priority = 900,
         dependencies = {
             {'nvim-lua/plenary.nvim'},
             {
                 'nvim-telescope/telescope-fzf-native.nvim', 
-                dependencies = {"nvim-telescope/telescope.nvim"},
                 build = function()
                     vim.fn.system('cd ' .. vim.fn.stdpath('data') .. '/lazy/telescope-fzf-native.nvim && make')
                 end,

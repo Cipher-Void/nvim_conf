@@ -1,7 +1,8 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        lazy = vim.fn.argc() > 0,
+        -- lazy = vim.fn.argc() > 0,
+        event = { "VeryLazy", "LazyFile" },
         opts = {
             ensure_installed = {
                 "python",

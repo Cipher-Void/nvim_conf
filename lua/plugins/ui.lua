@@ -76,6 +76,6 @@ return {
     -- {'morhetz/gruvbox'},
     -- {'ayu-theme/ayu-vim'},
     -- {'sainnhe/gruvbox-material'},
-    {'rebelot/kanagawa.nvim'},
+    {'rebelot/kanagawa.nvim', lazy=false, priority=1000},
 }
 
