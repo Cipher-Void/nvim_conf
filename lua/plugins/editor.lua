@@ -28,7 +28,18 @@ return {
                             ["q"] = actions.close,
                         },
                     },
-                },
+		          	  results_title = false,
+					  sorting_strategy = "ascending",
+					  layout_strategy = "vertical",
+					  layout_config = {
+                        vertical = {
+						    preview_cutoff = 1, -- Preview should always show (unless previewer = false)
+                            preview_height = 0.7,
+                            width = 0.5, 
+                            height = 0.8,
+                        },
+					  },
+					},
             }
         end,
         keys = function()
