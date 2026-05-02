@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Common keymaps
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true })
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { noremap = true, silent = true })
 vim.keymap.set('n', '<leader><Space>', ':nohlsearch<CR>', { noremap = true })  -- Выключение текущего выделения поиска
 
 -- Переключение вкладок
