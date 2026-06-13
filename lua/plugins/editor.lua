@@ -101,8 +101,23 @@ return {
 
     {
         'Pocco81/auto-save.nvim', 
-        opts = {},
         event = "InsertLeave", -- FocusLost  Сохраняет файл при потере фокуса окном NeoVim.
         lazy = true,
+		opts = {
+			condition = function(buf)
+				local config_path = vim.fn.expand("~/.config/nvim")
+				local current_file = vim.fn.expand("%:p")
+				-- Отключить в конфиге nvim
+				if vim.startswith(current_file, config_path) then
+					return false
+				end
+				-- Стандартная проверка плагина
+				local fn = vim.fn
+				if fn.getbufvar(buf, "&modifiable") == 1 then
+					return true
+				end
+				return false
+			end,
+		},
     }, -- Автосохранение 
 }
