@@ -15,6 +15,8 @@ return {
                 "scss", 
                 "html",
                 "json",
+                "bash",
+                "lua",
                 "markdown", "markdown_inline"
             },
             highlight = { enable = true },
