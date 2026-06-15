@@ -17,8 +17,10 @@ vim.opt.splitbelow = true -- horizontal split open below and right
 vim.opt.splitright = true
 vim.g.mapleader = ',' -- Leader key
 vim.opt.termguicolors = true -- 24-bit colors
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = "nvc"
 vim.opt.clipboard = "unnamedplus"
+vim.opt.lazyredraw = false
 
 
 -- netrw файловый менеджер 
