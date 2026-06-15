@@ -111,6 +111,7 @@ return {
         ft = "markdown",
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
         opts = {
+            anti_conceal = { enabled = false },
             code = {
                 disable_background = true
             },
