@@ -13,12 +13,6 @@ return {
         },
         opts = function()
             local deflt_opts = {
-                workspaces = {
-                    {
-                        name = "obsidian",
-                        path = "~/obsidian"
-                    }
-                },
                 completion = {
                     nvim_cmp = true,
                     min_chars = 2,
@@ -28,6 +22,21 @@ return {
 					enable = false,
 				},
             }
+
+            local workspaces = {}
+            local claude_workspaces_dir = "~/obsidian"
+            local workspaces_dirs = vim.fn.glob(claude_workspaces_dir .. "/*", false, true)
+            for ind, workspace_dir in ipairs(workspaces_dirs) do
+                if vim.fn.isdirectory(workspace_dir) == 1 then
+                    local workspace_name = vim.fn.fnamemodify(workspace_dir, ":t")
+                    table.insert(workspaces, {
+                        name = workspace_name,
+                        path = workspace_dir
+                    })
+                end
+            end
+            deflt_opts.workspaces = workspaces
+            
 
             -- check dir of templates
             local template_dir = "_HybridSystem/Template"
