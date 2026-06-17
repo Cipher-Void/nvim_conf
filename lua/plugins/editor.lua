@@ -64,9 +64,14 @@ return {
 
     {'m4xshen/autoclose.nvim',  -- Автоматические двойные кавычки, скобки и тп. И работа с ними
         opts = {},
-        event = "InsertEnter",
+        event = "VeryLazy",
         lazy = true,
     },  
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+		opts = {}
+	},
         
     {'numToStr/Comment.nvim',  -- Для удобного коментирования
         lazy = true,
