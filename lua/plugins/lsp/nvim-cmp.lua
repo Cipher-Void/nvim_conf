@@ -1,17 +1,7 @@
 return {
     {
-        "hrsh7th/cmp-nvim-lsp",
-        config = function()
-            local cmp_nvim_lsp = require("cmp_nvim_lsp")
-            -- used to enable autocompletion (assign to every lsp server config)
-            local capabilities = cmp_nvim_lsp.default_capabilities()
-
-            vim.lsp.config("*", { capabilities = capabilities, })
-      end,
-    },
-    {
         'L3MON4D3/LuaSnip', 
-        bild = "make install_jsregexp",
+        build = "make install_jsregexp",
         opts = {
             history = true,
             updateevents = "TextChanged,TextChangedI"
@@ -19,7 +9,7 @@ return {
         config = function(_, opts)
             local ls = require("luasnip")
             opts.expand = function(args)
-                luasnip.lsp_expand(args.body)
+                ls.lsp_expand(args.body)
             end,
             ls.setup(opts)
 
@@ -40,12 +30,6 @@ return {
                 end
             end, { silent = true })
 			
-			-- For LazyDev.nvim
-			opts.sources = opts.sources or {}
-			table.insert(opts.sources, {
-				name = "lazydev",
-				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-			})
             
         end,
     },
@@ -58,6 +42,13 @@ return {
             "hrsh7th/cmp-path",
         },
         event = "VeryLazy", 
+        config = function()
+            local cmp_nvim_lsp = require("cmp_nvim_lsp")
+            -- used to enable autocompletion (assign to every lsp server config)
+            local capabilities = cmp_nvim_lsp.default_capabilities()
+
+            vim.lsp.config("*", { capabilities = capabilities, })
+        end,
         opts = function()
             local cmp = require('cmp')
             return {
@@ -73,12 +64,13 @@ return {
                 },
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp', priority = 1},  -- Источник из LSP
-                    { name = 'html-css', priority = 2 },  -- Источник из LSP
+                    -- { name = 'html-css', priority = 2 },  -- Источник из LSP
                     { name = 'path' },  -- Источник из LSP
                     { name = 'luasnip' },  -- Источник из LSP
                     { name = 'obsidian' },  -- Источник из LSP
                     { name = 'obsidian_new' },  -- Источник из LSP
                     { name = 'obsidian_tags' },  -- Источник из LSP
+                    { name = "lazydev", group_index = 0 },  -- set group index to 0 to skip loading LuaLS completions
                 }),
             }
         end,
