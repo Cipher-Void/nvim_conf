@@ -53,39 +53,35 @@ return {
 			local function heading_set(level)
 				return function()
 					local line = vim.api.nvim_get_current_line()
-					-- Убираем существующий заголовок
-					local content = line:gsub("^#+%s*", "")
-					if level == 0 then
-						-- Убрать заголовок полностью
-						vim.api.nvim_set_current_line(content)
-					else
-						local hashes = string.rep("#", level)
-						vim.api.nvim_set_current_line(hashes .. " " .. content)
-					end
+                    if level == 0 then
+                        line = string.gsub(line, "^#*%s*", "")
+                    else
+                        line = string.gsub(line, "^#*%s*", string.rep("#", level) .. " ")
+                    end
+                    vim.api.nvim_set_current_line(line)
 				end
 			end
 
 			local function heading_increase()
 				local line = vim.api.nvim_get_current_line()
-				local level = line:match("^(#+)%s")
-				if not level then
-					-- Нет заголовка — делаем H1
-					vim.api.nvim_set_current_line("# " .. line)
-				elseif #level < 6 then
-					vim.api.nvim_set_current_line("#" .. line)
-				end
+                local head = string.match(line, "^#*")
+                if #head < 6 then
+                    line = string.gsub(line, "^#*%s*", string.rep("#", #head + 1) .. " ")
+                    vim.api.nvim_set_current_line(line)
+                end 
 			end
+
 
 			local function heading_decrease()
 				local line = vim.api.nvim_get_current_line()
-				local level = line:match("^(#+)%s")
-				if not level then return end
-				if #level == 1 then
-					-- H1 → убрать заголовок
-					vim.api.nvim_set_current_line(line:gsub("^#%s+", ""))
-				else
-					vim.api.nvim_set_current_line(line:sub(2))
-				end
+                local head = string.match(line, "^#+")
+				if not head then return end
+                if #head == 1 then
+                    line = string.gsub(line, "^#*%s*", "")
+                else 
+                    line = string.gsub(line, "^#*%s*", string.rep("#", #head - 1) .. " ")
+                end 
+                vim.api.nvim_set_current_line(line)
 			end
 
 			return {
