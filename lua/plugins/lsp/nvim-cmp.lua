@@ -1,15 +1,5 @@
 return {
     {
-        "hrsh7th/cmp-nvim-lsp",
-        config = function()
-            local cmp_nvim_lsp = require("cmp_nvim_lsp")
-            -- used to enable autocompletion (assign to every lsp server config)
-            local capabilities = cmp_nvim_lsp.default_capabilities()
-
-            vim.lsp.config("*", { capabilities = capabilities, })
-        end,
-    },
-    {
         'L3MON4D3/LuaSnip', 
         build = "make install_jsregexp",
         opts = {
@@ -51,7 +41,7 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
         },
-        event = "LazyFile", 
+        event = { "VeryLazy", "LazyFile", "InsertEnter" },
         opts = function()
             local cmp = require('cmp')
             return {
