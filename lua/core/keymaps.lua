@@ -50,3 +50,10 @@ vim.keymap.set('n', '[q', ':cprevious<CR>', { noremap = true, silent = true, des
 vim.keymap.set('n', '<leader>qq', ':cclose<CR>', { noremap = true, silent = true, desc = "Close Quickfix" })  
 vim.keymap.set('n', '<leader>qr', ':silent! cbuffer<CR>', { noremap = true, silent = true, desc = "update Quickfix" })  
 
+vim.api.nvim_create_user_command('LspInfo', function()
+  vim.cmd('checkhealth vim.lsp')
+end, {})
+
+vim.api.nvim_create_user_command('LspLog', function()
+  vim.cmd('edit ' .. vim.lsp.log.get_filename())
+end, {})
