@@ -3,6 +3,7 @@ return {
         "lewis6991/gitsigns.nvim",
         event = "LazyFile",
         opts = {
+            sign_priority = 20,
             signs = {
                 add = { text = "▎" },
                 change = { text = "▎" },

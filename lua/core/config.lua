@@ -21,6 +21,7 @@ vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nvc"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.lazyredraw = false
+vim.opt.signcolumn = "yes:2"
 
 
 -- netrw файловый менеджер 
