@@ -23,7 +23,7 @@ return {
             vim.diagnostic.config({
                 underline = false,
                 update_in_insert = false,
-                signs = true, 
+                signs = false,  -- Кастомная обработка 
                 severity_sort = true,
                 virtual_text = false,  -- Для того чтобы ошибка писалась справа(по умолчанию выключено)
             })

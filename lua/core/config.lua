@@ -21,7 +21,8 @@ vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nvc"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.lazyredraw = false
-vim.opt.signcolumn = "yes:2"
+vim.opt.signcolumn = "yes:1"
+vim.opt.statuscolumn = [[%!v:lua.require'core.statuscolumn'.render()]]
 
 
 -- netrw файловый менеджер 
