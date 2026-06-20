@@ -39,10 +39,10 @@ return {
             
 
             -- check dir of templates
-            local template_dir = "_HybridSystem/Template"
+            local template_dir = "_HybridSystem/templates"
             if vim.fn.isdirectory(template_dir) == 1 then
                 deflt_opts.templates = {
-                    folder = "_HybridSystem/Template",
+                    folder = template_dir,
                     date_format = "%Y-%m-%d",
                     time_format = "%H:%M",
                 }
