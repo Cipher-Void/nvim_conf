@@ -60,9 +60,6 @@ return {
                     -- { name = 'html-css', priority = 2 },  -- Источник из LSP
                     { name = 'path' },  -- Источник из LSP
                     { name = 'luasnip' },  -- Источник из LSP
-                    { name = 'obsidian' },  -- Источник из LSP
-                    { name = 'obsidian_new' },  -- Источник из LSP
-                    { name = 'obsidian_tags' },  -- Источник из LSP
                     { name = "lazydev", group_index = 0 },  -- set group index to 0 to skip loading LuaLS completions
                 }),
             }
