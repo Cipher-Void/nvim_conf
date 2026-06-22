@@ -10,6 +10,7 @@ return {
 
         dependencies = {
             "nvim-lua/plenary.nvim",
+            'nvim-telescope/telescope.nvim',
         },
 
         opts = function()
@@ -18,6 +19,11 @@ return {
                 picker = { name = "telescope.nvim" },
                 open_notes_in = "current",
 				ui = { enable = false },
+                checkbox = {
+                    enabled = true,
+                    create_new = true,
+                    order = { " ", "x", "~" },                },
+                note_id_func = require("obsidian.builtin").title_id
             }
 
 
@@ -97,9 +103,9 @@ return {
 				{ "<leader>os", "<cmd>Obsidian search<cr>",             desc = "Obsidian: [s]earch" },
 				{ "<leader>ot", "<cmd>Obsidian tags<cr>",               desc = "Obsidian: [t]ags" },
 				{ "<leader>ob", "<cmd>Obsidian backlinks<cr>",          desc = "Obsidian: [b]acklinks" },
-				{ "<leader>of", "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: [f]ollow link" },
-				{ "<leader>ol", "<cmd>Obsidian link<cr>",               desc = "Obsidian: [l]ink selection" },
-				{ "<leader>oL", "<cmd>Obsidian link_new<cr>",           desc = "Obsidian: [L]ink to new note" },
+                { "<leader>of", "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: [f]ollow link" },
+				{ "<leader>ol", "<cmd>Obsidian link<cr>",               desc = "Obsidian: [l]ink selection", mode = "v"  },
+				{ "<leader>oL", "<cmd>Obsidian link_new<cr>",           desc = "Obsidian: [L]ink to new note", mode = "v"  },
 
 				-- Daily notes
 				{ "<leader>od", "<cmd>Obsidian today<cr>",              desc = "Obsidian: [d]aily note (today)" },
