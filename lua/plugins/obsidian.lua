@@ -57,39 +57,6 @@ return {
         end,
 
         keys = function()
-			local function heading_set(level)
-				return function()
-					local line = vim.api.nvim_get_current_line()
-                    if level == 0 then
-                        line = string.gsub(line, "^#*%s*", "")
-                    else
-                        line = string.gsub(line, "^#*%s*", string.rep("#", level) .. " ")
-                    end
-                    vim.api.nvim_set_current_line(line)
-				end
-			end
-
-			local function heading_increase()
-				local line = vim.api.nvim_get_current_line()
-                local head = string.match(line, "^#*")
-                if #head < 6 then
-                    line = string.gsub(line, "^#*%s*", string.rep("#", #head + 1) .. " ")
-                    vim.api.nvim_set_current_line(line)
-                end 
-			end
-
-			local function heading_decrease()
-				local line = vim.api.nvim_get_current_line()
-                local head = string.match(line, "^#+")
-				if not head then return end
-                if #head == 1 then
-                    line = string.gsub(line, "^#*%s*", "")
-                else 
-                    line = string.gsub(line, "^#*%s*", string.rep("#", #head - 1) .. " ")
-                end 
-                vim.api.nvim_set_current_line(line)
-			end
-
 			return {
 				-- Заметки
 				{ "<leader>on", "<cmd>Obsidian new<cr>",                desc = "Obsidian: New [n]ote" },
@@ -103,7 +70,6 @@ return {
 				{ "<leader>os", "<cmd>Obsidian search<cr>",             desc = "Obsidian: [s]earch" },
 				{ "<leader>ot", "<cmd>Obsidian tags<cr>",               desc = "Obsidian: [t]ags" },
 				{ "<leader>ob", "<cmd>Obsidian backlinks<cr>",          desc = "Obsidian: [b]acklinks" },
-                { "<leader>of", "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: [f]ollow link" },
 				{ "<leader>ol", "<cmd>Obsidian link<cr>",               desc = "Obsidian: [l]ink selection", mode = "v"  },
 				{ "<leader>oL", "<cmd>Obsidian link_new<cr>",           desc = "Obsidian: [L]ink to new note", mode = "v"  },
 
@@ -125,18 +91,7 @@ return {
 
 				-- Служебное
 				{ "<leader>oH", "<cmd>Obsidian check<cr>",              desc = "Obsidian: [H]ealth check" },
-				{ "gd",         "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: Follow link", ft = "markdown" },
-
-                -- Работа с заголовками
-				{ "<leader>oh0", heading_set(0),     			   		desc = "Obsidian MD: Remove heading" },
-				{ "<leader>oh1", heading_set(1),     	   			    desc = "Obsidian MD: Heading 1" },
-				{ "<leader>oh2", heading_set(2),     	           		desc = "Obsidian MD: Heading 2" },
-				{ "<leader>oh3", heading_set(3),                   		desc = "Obsidian MD: Heading 3" },
-				{ "<leader>oh4", heading_set(4),                   		desc = "Obsidian MD: Heading 4" },
-				{ "<leader>oh5", heading_set(5),                   		desc = "Obsidian MD: Heading 5" },
-				{ "<leader>oh6", heading_set(6),                   		desc = "Obsidian MD: Heading 6" },
-				{ "<leader>oh=", heading_increase, 				   		desc = "Obsidian MD: Heading increase" },
-				{ "<leader>oh-", heading_decrease,   		       		desc = "Obsidian MD: Heading decrease" },
+				-- { "gd",         "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: Follow link", ft = "markdown" },
 			}
 		end,
 	},
