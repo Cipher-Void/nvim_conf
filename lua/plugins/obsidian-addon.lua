@@ -8,6 +8,7 @@ return {
         dependencies = {
             'nvim-telescope/telescope.nvim',
         },
+        opts = {},
         keys = {
             { "<leader>oif", function() require("obsidian-addon").telescope_insert_filename() end,    desc = "[I]nsert [f]ilename (Telescope)" },
             { "<leader>ogd", function()
