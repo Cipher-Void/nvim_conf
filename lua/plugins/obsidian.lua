@@ -23,7 +23,8 @@ return {
                     enabled = true,
                     create_new = true,
                     order = { " ", "x", "~" },                },
-                note_id_func = require("obsidian.builtin").title_id
+                note_id_func = require("obsidian.builtin").title_id,
+                statusline = { enabled = false}
             }
 
 
