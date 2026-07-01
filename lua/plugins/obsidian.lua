@@ -18,13 +18,15 @@ return {
                 legacy_commands = false,
                 picker = { name = "telescope.nvim" },
                 open_notes_in = "current",
-				ui = { enable = false },
+				ui         = { enabled = true },
+                statusline = { enabled = false },
+                footer     = { enabled = false },
+                sync       = { enabled = false },
                 checkbox = {
                     enabled = true,
                     create_new = true,
                     order = { " ", "x", "~" },                },
                 note_id_func = require("obsidian.builtin").title_id,
-                statusline = { enabled = false}
             }
 
 
