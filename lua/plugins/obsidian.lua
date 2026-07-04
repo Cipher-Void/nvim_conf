@@ -123,16 +123,16 @@ return {
         ft = "markdown", 
         opts = {},
         keys = {
-            { "<leader>mt", "<cmd>MarkdownTableTogglePreview<cr>", desc = "Toggle Markdown table preview" },
-            { "<leader>mp", "<cmd>MarkdownTablePreview<cr>", desc = "Preview Markdown table inline" },
-            { "<leader>mf", "<cmd>MarkdownTableFloatPreview<cr>", desc = "Float Markdown table preview" },
-            { "<leader>mc", "<cmd>MarkdownTableClosePreview<cr>", desc = "Close Markdown table preview" },
+            { "<leader>mt", "<cmd>MarkdownTableTogglePreview<cr>",        desc = "Toggle Markdown table preview" },
+            { "<leader>mp", "<cmd>MarkdownTablePreview<cr>",              desc = "Preview Markdown table inline" },
+            { "<leader>mf", "<cmd>MarkdownTableFloatPreview<cr>",         desc = "Float Markdown table preview" },
+            { "<leader>mc", "<cmd>MarkdownTableClosePreview<cr>",         desc = "Close Markdown table preview" },
             { "<leader>mq", "<cmd>MarkdownTableToggleInlineViewport<cr>", desc = "Toggle inline table viewport" },
 
-            { "]c", "<cmd>MarkdownTableNextCell<cr>", desc = "Next table cell" },
-            { "[c", "<cmd>MarkdownTablePrevCell<cr>", desc = "Previous table cell" },
-            { "]r", "<cmd>MarkdownTableNextRow<cr>", desc = "Next table row" },
-            { "[r", "<cmd>MarkdownTablePrevRow<cr>", desc = "Previous table row" },
+            { "]c", "<cmd>MarkdownTableNextCell<cr>",                     desc = "Next table cell", mode = { "n", "i", "v", "o" } },
+            { "[c", "<cmd>MarkdownTablePrevCell<cr>",                     desc = "Previous table cell", mode = { "n", "i", "v", "o" } }, 
+            { "]r", "<cmd>MarkdownTableNextRow<cr>",                      desc = "Next table row", mode = { "n", "i", "v", "o" } },
+            { "[r", "<cmd>MarkdownTablePrevRow<cr>",                      desc = "Previous table row", mode = { "n", "i", "v", "o" } },
         }
     },
 }
