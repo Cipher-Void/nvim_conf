@@ -18,7 +18,7 @@ return {
                 legacy_commands = false,
                 picker = { name = "telescope.nvim" },
                 open_notes_in = "current",
-				ui         = { enabled = true },
+				ui         = { enable = false },
                 statusline = { enabled = false },
                 footer     = { enabled = false },
                 sync       = { enabled = false },
@@ -102,12 +102,18 @@ return {
         "MeanderingProgrammer/render-markdown.nvim",
         lazy = true,
         ft = "markdown",
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
+        dependencies = { 
+            'nvim-treesitter/nvim-treesitter', 
+            { 'echasnovski/mini.icons', opts = {}, },
+        },
         opts = {
+            render_modes = { "n", "c", "t" },
             anti_conceal = { enabled = false },
+            latex        = { enabled = false },
             code = {
                 disable_background = true
             },
+            preset = "obsidian",
         },
     },
 }
