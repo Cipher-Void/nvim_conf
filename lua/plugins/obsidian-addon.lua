@@ -14,9 +14,9 @@ return {
             { "<leader>ogd", function()
                 require("obsidian-addon").telescope_open_wikilink()
             end, mode = { "n", "v" },                                                                 desc = "Obsidian: [g]o [t]o wikilink" },
-            { "gd", function()
-                require("obsidian-addon").telescope_open_wikilink()
-            end, mode = { "n", "v" }, ft = "markdown",                                                desc = "Obsidian: [g]o [t]o wikilink" },
+            -- { "gd", function()
+            --     require("obsidian-addon").telescope_open_wikilink()
+            -- end, mode = { "n", "v" }, ft = "markdown",                                                desc = "Obsidian: [g]o [t]o wikilink" },
             -- Работа с заголовками
             { "<leader>oh0", function() require("obsidian-addon").heading_set(0)() end,     	      desc = "Obsidian MD: Remove heading" },
             { "<leader>oh1", function() require("obsidian-addon").heading_set(1)() end,     	      desc = "Obsidian MD: Heading 1" },

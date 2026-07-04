@@ -94,7 +94,7 @@ return {
 
 				-- Служебное
 				{ "<leader>oH", "<cmd>Obsidian check<cr>",              desc = "Obsidian: [H]ealth check" },
-				-- { "gd",         "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: Follow link", ft = "markdown" },
+				{ "gd",         "<cmd>Obsidian follow_link<cr>",        desc = "Obsidian: Follow link", ft = "markdown" },
 			}
 		end,
 	},
