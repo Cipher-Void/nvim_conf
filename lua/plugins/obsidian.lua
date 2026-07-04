@@ -110,10 +110,29 @@ return {
             render_modes = { "n", "c", "t" },
             anti_conceal = { enabled = false },
             latex        = { enabled = false },
+            pipe_table   = { enabled = false },
+            win_options = { concealcursor = { rendered = 'nvic' }},
             code = {
                 disable_background = true
             },
             preset = "obsidian",
         },
+    },
+    {
+        'ice345/markdown-table-wrap.nvim', 
+        ft = "markdown", 
+        opts = {},
+        keys = {
+            { "<leader>mt", "<cmd>MarkdownTableTogglePreview<cr>", desc = "Toggle Markdown table preview" },
+            { "<leader>mp", "<cmd>MarkdownTablePreview<cr>", desc = "Preview Markdown table inline" },
+            { "<leader>mf", "<cmd>MarkdownTableFloatPreview<cr>", desc = "Float Markdown table preview" },
+            { "<leader>mc", "<cmd>MarkdownTableClosePreview<cr>", desc = "Close Markdown table preview" },
+            { "<leader>mq", "<cmd>MarkdownTableToggleInlineViewport<cr>", desc = "Toggle inline table viewport" },
+
+            { "]c", "<cmd>MarkdownTableNextCell<cr>", desc = "Next table cell" },
+            { "[c", "<cmd>MarkdownTablePrevCell<cr>", desc = "Previous table cell" },
+            { "]r", "<cmd>MarkdownTableNextRow<cr>", desc = "Next table row" },
+            { "[r", "<cmd>MarkdownTablePrevRow<cr>", desc = "Previous table row" },
+        }
     },
 }
