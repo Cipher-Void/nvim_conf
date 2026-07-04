@@ -2,6 +2,7 @@ return {
     {
         "folke/snacks.nvim",
         lazy = vim.fn.argc() > 0, 
+        priority = 1000,
         opts = {
             dashboard = {
                 preset = {
