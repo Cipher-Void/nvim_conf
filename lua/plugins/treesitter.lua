@@ -20,7 +20,6 @@ return {
                 "markdown", "markdown_inline"
             },
             highlight = { enable = true },
-            rainbow = { enable = true },
         },
     } 
 }
