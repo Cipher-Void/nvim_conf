@@ -64,6 +64,7 @@ return {
 				-- Заметки
 				{ "<leader>on", "<cmd>Obsidian new<cr>",                desc = "Obsidian: New [n]ote" },
 				{ "<leader>oN", "<cmd>Obsidian new_from_template<cr>",  desc = "Obsidian: [N]ew from template" },
+				{ "<leader>ot", "<cmd>Obsidian template<cr>",           desc = "Obsidian: Insert [t]emplate" },
 				{ "<leader>oo", "<cmd>Obsidian open<cr>",               desc = "Obsidian: [o]pen in app" },
 				{ "<leader>oq", "<cmd>Obsidian quick_switch<cr>",       desc = "Obsidian: [q]uick switch" },
 				{ "<leader>or", "<cmd>Obsidian rename<cr>",             desc = "Obsidian: [r]ename note" },
@@ -71,7 +72,7 @@ return {
 
 				-- Поиск и навигация
 				{ "<leader>os", "<cmd>Obsidian search<cr>",             desc = "Obsidian: [s]earch" },
-				{ "<leader>ot", "<cmd>Obsidian tags<cr>",               desc = "Obsidian: [t]ags" },
+				{ "<leader>oT", "<cmd>Obsidian tags<cr>",               desc = "Obsidian: [t]ags" },
 				{ "<leader>ob", "<cmd>Obsidian backlinks<cr>",          desc = "Obsidian: [b]acklinks" },
 				{ "<leader>ol", "<cmd>Obsidian link<cr>",               desc = "Obsidian: [l]ink selection", mode = "v"  },
 				{ "<leader>oL", "<cmd>Obsidian link_new<cr>",           desc = "Obsidian: [L]ink to new note", mode = "v"  },

@@ -29,7 +29,7 @@ return {
             { "<leader>oh-", function() require("obsidian-addon").heading_decrease() end,   	      desc = "Obsidian MD: Heading decrease" },
 
             -- Для разработки
-            { "<leader>mt", function() require("obsidian-addon").test() end,   	                      desc = "Obsidian MD: Heading decrease" },
+            { "<leader>myt", function() require("obsidian-addon").test() end,   	                  desc = "Obsidian MD: test function" },
         },
     },
 }

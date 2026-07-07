@@ -38,8 +38,14 @@ return {
                             width = 0.5, 
                             height = 0.8,
                         },
-					  },
-					},
+				    },
+				},
+
+                pickers = {
+                    find_files = {
+                        find_command = { "rg", "--files", "--smart-case", "--pcre2" },
+                    },
+                },
             }
         end,
         keys = function()
