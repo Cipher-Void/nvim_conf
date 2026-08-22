@@ -1,0 +1,92 @@
+{
+  "print": {
+    "prefix": "pr",
+    "body": "print(${1:\"Hello, world!\"})"
+  },
+  "print f-string": {
+    "prefix": "prf",
+    "body": "print(f\"${1:Hello, world!}\")"
+  },
+  "pprint": {
+    "prefix": "ppr",
+    "body": "__import__(\"pprint\").pprint(${1:obj})"
+  },
+
+
+
+  "async def": {
+    "prefix": "defa",
+    "body": ["async def ${1:func_name}(${2:}):", "\t\"\"\"${3:doc}\"\"\"", "\t{$4:pass}"]
+  },
+  "dunder method": {
+    "prefix": "defsd",
+    "body": ["def __${1:func_name}__(self${2:}):", "\t\"\"\"${3:doc}\"\"\"", "\t{$4:pass}"]
+  },
+  "async method": {
+    "prefix": "defsa",
+    "body": ["async def ${1:func_name}(self${2:}):", "\t\"\"\"${3:doc}\"\"\"", "\t{$4:pass}"]
+  },
+
+  "async def type": {
+    "prefix": "defat",
+    "body": ["async def ${1:func_name}(${2:}) -> ${3:None}:", "\t\"\"\"${4:doc}\"\"\"", "\t{$5:pass}"]
+  },
+  "dunder method type": {
+    "prefix": "defsdt",
+    "body": ["def __${1:func_name}__(self${2:}) -> ${3:None}:", "\t\"\"\"${4:doc}\"\"\"", "\t{$5:pass}"]
+  },
+  "async method type": {
+    "prefix": "defsat",
+    "body": ["async def ${1:func_name}(self${2:}) -> ${3:None}:", "\t\"\"\"${4:doc}\"\"\"", "\t{$5:pass}"]
+  },
+
+
+  "self attr": {
+    "prefix": "sa",
+    "body": "self.${1:atr} = $1"
+  },
+  "dunder name": {
+    "prefix": "_",
+    "body": "__${1:name}__"
+  },
+  "docstring": {
+    "prefix": "\"",
+    "body": ["\"\"\"$0", "\"\""]
+  },
+
+
+  "kwargs get": {
+    "prefix": "kwg",
+    "body": "${1:var_name} = kwargs.get(\"$1\", ${2:None})"
+  },
+  "kwargs get self": {
+    "prefix": "kwgs",
+    "body": "self.${1:var_name} = kwargs.get(\"$1\", ${2:None})"
+  },
+  "args kwargs": {
+    "prefix": "akw",
+    "body": "*args, **kwargs"
+  },
+
+
+  "log critical": {
+    "prefix": "lc",
+    "body": "logger.critical(f\"${1:msg}\")"
+  },
+  "log error": {
+    "prefix": "le",
+    "body": "logger.error(f\"${1:msg}\")"
+  },
+  "log warning": {
+    "prefix": "lw",
+    "body": "logger.warning(f\"${1:msg}\")"
+  },
+  "log info": {
+    "prefix": "li",
+    "body": "logger.info(f\"${1:msg}\")"
+  },
+  "log debug": {
+    "prefix": "ld",
+    "body": "logger.debug(f\"${1:msg}\")"
+  }
+}
