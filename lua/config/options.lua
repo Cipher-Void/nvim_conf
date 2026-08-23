@@ -6,3 +6,4 @@
 -- vim.opt.shiftwidth = 4
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
+vim.g.python3_host_prog = "/usr/bin/python3"
