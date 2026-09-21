@@ -14,3 +14,6 @@ vim.api.nvim_create_user_command("Q", function()
 end, {})
 
 vim.cmd([[cnoreabbrev q Q]])
+vim.keymap.del("n", "<leader>l")
+vim.keymap.del("n", "<leader>L")
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
